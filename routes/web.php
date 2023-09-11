@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +24,4 @@ Route::get('/', [FormController::class, 'showHome'])->name('show.form');
 Route::get('/form', [FormController::class, 'showForm'])->name('show.form');
 Route::post('/traiter-formulaire', [FormController::class, 'traiterFormulaire'])->name('traiter.formulaire');
 Route::get('/formdata', [FormController::class, 'showFormulaireData'])->name('show.formulaire.data');
-
+Route::resource('profiles', ProfileController::class);
